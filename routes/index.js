@@ -14,12 +14,12 @@ router.use(bodyParser.urlencoded({ extended: true })); // for parsing applicatio
 //#########################################
 
 // GET with URI with querry  /readNameAndRespond?name=Lynne
-router.post('/:name', function(req, res, next) {
+router.post('/', function(req, res, next) {
     //expecting data variable called name --retrieve value using body-parser
-    var body = JSON.stringify(req.body);  //if wanted entire body as JSON
-    var params = JSON.stringify(req.params);//if wanted parameters
-    var query = req.query;  //if wanted the query
-    var value_name = req.query.name;  //retrieve the data associated with name
+    //var body = JSON.stringify(req.body);  //if wanted entire body as JSON
+    //var params = JSON.stringify(req.params);//if wanted parameters
+    //var query = req.query;  //if wanted the query
+    var value_name = req.body.name;  //retrieve the data associated with name
     res.send("hello " + value_name);
 });
 
