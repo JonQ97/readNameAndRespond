@@ -14,7 +14,7 @@ router.use(bodyParser.urlencoded({ extended: true })); // for parsing applicatio
 //#########################################
 
 // GET with URI with querry  /readNameAndRespond?name=Lynne
-router.get(post['name'], function(req, res, next) {
+router.get('/:name', function(req, res, next) {
     //expecting data variable called name --retrieve value using body-parser
     var body = JSON.stringify(req.body);  //if wanted entire body as JSON
     var params = JSON.stringify(req.params);//if wanted parameters
